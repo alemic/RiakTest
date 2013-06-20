@@ -1,4 +1,26 @@
 %h3 Home
-- @users.each do |user|
-  %p
-    User: #{link_to user.name, user}
+-#- @users.each do |user|
+-#  %p
+-#    User: #{link_to user.name, user}
+
+%table.table.table-striped
+  %thead
+    %tr
+      %td
+        Name
+      %td
+        Date Created
+      %td
+        Seed URLs
+
+  %tbody
+    -@jobTemplates.each do |jobTemplate|
+      %tr
+        %td
+          #{jobTemplate["fields"]["name"]}
+        %td
+          #{jobTemplate["fields"]["dateCreated"]}
+        %td
+          #{jobTemplate["fields"]["seedURLs"]}
+
+
