@@ -1,5 +1,19 @@
-= link_to "Riaktest", root_path, :class => 'brand'
+= link_to "80legs", root_path, :class => 'brand'
 %ul.nav
+  %li.dropdown
+    %a#drop1.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
+      Crawls
+      %b.caret
+    %ul.dropdown-menu{"aria-labelledby" => "drop1", :role => "menu"}
+      %li{:role => "presentation"}
+        = link_to 'My Crawls', crawls_path
+      %li{:role => "presentation"}
+        = link_to 'New Crawl', new_crawl_path
+      %li{:role => "presentation"}
+        %a{:href => "#", :role => "menuitem", :tabindex => "-1"} Something else here
+      %li.divider{:role => "presentation"}
+      %li{:role => "presentation"}
+        %a{:href => "#", :role => "menuitem", :tabindex => "-1"} Separated link
   - if user_signed_in?
     %li
       = link_to 'Logout', destroy_user_session_path, :method=>'delete'

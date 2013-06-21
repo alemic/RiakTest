@@ -1,0 +1,23 @@
+%h3 My Crawls
+%table.table.table-striped
+  %thead
+    %tr
+      %td
+        Name
+      %td
+        Date Created
+      %td
+        Seed URLs
+
+  %tbody
+    -if @jobTemplates
+      -@jobTemplates.each do |jobTemplate|
+        %tr
+          %td
+            #{jobTemplate["fields"]["name"]}
+          %td
+            #{jobTemplate["fields"]["dateCreated"]}
+          %td
+            #{jobTemplate["fields"]["seedURLs"]}
+
+
