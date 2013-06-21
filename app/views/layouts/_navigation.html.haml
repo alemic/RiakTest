@@ -9,11 +9,13 @@
         = link_to 'My Crawls', crawls_path
       %li{:role => "presentation"}
         = link_to 'New Crawl', new_crawl_path
-      %li{:role => "presentation"}
-        %a{:href => "#", :role => "menuitem", :tabindex => "-1"} Something else here
       %li.divider{:role => "presentation"}
       %li{:role => "presentation"}
-        %a{:href => "#", :role => "menuitem", :tabindex => "-1"} Separated link
+        = link_to 'Seed Lists', seed_lists_path
+      %li{:role => "presentation"}
+        = link_to '80 Apps', eighty_apps_path
+      %li{:role => "presentation"}
+        = link_to '80 App Data', eighty_app_data_path
   - if user_signed_in?
     %li
       = link_to 'Logout', destroy_user_session_path, :method=>'delete'

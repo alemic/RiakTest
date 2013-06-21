@@ -6,4 +6,7 @@ RiakTest::Application.routes.draw do
   devise_for :users
   resources :users
   resources :crawls
+  resources :seed_lists
+  resources :eighty_apps
+  resources :eighty_app_data
 end

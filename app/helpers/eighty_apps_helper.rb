@@ -1,0 +1,2 @@
+module EightyAppsHelper
+end
