@@ -15,20 +15,19 @@
           = render 'layouts/navigation'
     #main{:role => "main"}
       .container
-        .content
-          .row
-            .span12
-              .navbar.navbar-static
-                .navbar-inner
-                  .brand
-                    80apps
-                  %ul.nav
-                    %li
-                      =link_to "My 80apps", eighty_apps_path
-                    %li
-                      =link_to "New 80app", new_eighty_app_path
-              = render 'layouts/messages'
-              = yield
+        .row
+          .span12
+            .navbar.navbar-static
+              .navbar-inner
+                .brand
+                  80apps
+                %ul.nav
+                  %li
+                    =link_to "My 80apps", eighty_apps_path
+                  %li
+                    =link_to "New 80app", new_eighty_app_path
+            = render 'layouts/messages'
+            = yield
           %footer
       / ! end of .container
     / ! end of #main

@@ -15,20 +15,19 @@
           = render 'layouts/navigation'
     #main{:role => "main"}
       .container
-        .content
-          .row
-            .span12
-              .navbar.navbar-static
-                .navbar-inner
-                  .brand
-                    Seed Lists
-                  %ul.nav
-                    %li
-                      =link_to "My Seed Lists", seed_lists_path
-                    %li
-                      =link_to "New Seed List", new_seed_list_path
-              = render 'layouts/messages'
-              = yield
+        .row
+          .span12
+            .navbar.navbar-static
+              .navbar-inner
+                .brand
+                  Seed Lists
+                %ul.nav
+                  %li
+                    =link_to "My Seed Lists", seed_lists_path
+                  %li
+                    =link_to "New Seed List", new_seed_list_path
+            = render 'layouts/messages'
+            = yield
           %footer
       / ! end of .container
     / ! end of #main

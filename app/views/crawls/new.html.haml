@@ -65,6 +65,24 @@
             %br
             %br
     .control-group
-      %label.control-label 3.  Repeat Frequency
-      %select.controls
+      %label.control-label 6.  Depth Level
+      .controls
+        %ul#myTab3.nav.nav-tabs
+          %li.active
+            %a{"data-toggle" => "tab", :href => "#home3"} Simple
+          %li
+            %a{"data-toggle" => "tab", :href => "#profile3"} Seed List
+        #myTabContent3.tab-content
+          #home3.tab-pane.fade.active.in
+            %textarea{:rows => "3"}
+            %br
+            %br
+          #profile3.tab-pane.fade
+            %p
+              If you have a large seed list or if you want a seed list to be available for future jobs, you can upload it in the My Seed Lists section. Then, you can select it below.
+            %p
+              Select a seed list to use for this job:
+            %select
+            %br
+            %br
     %button.btn{:type => "submit"} Submit
