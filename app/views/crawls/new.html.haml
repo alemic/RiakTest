@@ -29,9 +29,10 @@
           %li.active
             %a{"data-toggle" => "tab", :href => "#home"} Simple
           %li
-            %a{"data-toggle" => "tab", :href => "#profile"} Seed List
+            %a{"data-toggle" => "tab", :href => "#profile"} Upload Seed List
         #myTabContent.tab-content
           #home.tab-pane.fade.active.in
+            %p Enter a list of URLs to start crawling from (e.g., "http://dir.yahoo.com"):
             %textarea{:rows => "3"}
             %br
             %br
@@ -43,8 +44,121 @@
             %select
             %br
             %br
-
+    .control-group
       %label.control-label 5.  Outgoing Links to Crawl
+      .controls
+        %ul#myTab2.nav.nav-tabs
+          %li.active
+            %a{"data-toggle" => "tab", :href => "#home2"} Simple
+          %li
+            %a{"data-toggle" => "tab", :href => "#profile2"} Regular Expression
+        #myTabContent2.tab-content
+          #home2.tab-pane.fade.active.in
+            %label.radio
+              %input#optionsRadios1{:checked => "", :name => "optionsRadios", :type => "radio", :value => "option1"}
+                Crawl all links found
+            %label.radio
+              %input#optionsRadios2{:name => "optionsRadios", :type => "radio", :value => "option2"}
+                Option two can be something else and selecting it will deselect option one
+            %label.radio
+              %input#optionsRadios2{:name => "optionsRadios", :type => "radio", :value => "option3"}
+                Only crawl links from the same fully-qualified domain(s) as URL(s) in my seed list and
+                treat "www.domain.com" and "domain.com" as the same domain
+            %label.radio
+              %input#optionsRadios2{:name => "optionsRadios", :type => "radio", :value => "option4"}
+                Only crawl links from the same fully-qualified domain(s) as URL(s) in my seed list and
+                treat "www.domain.com" and "domain.com" as different domains
+          #profile2.tab-pane.fade
+            %p
+              For greater control, you can specify a regular expression to match each link against.
+            %p
+              Enter a regular expression (e.g., .*\.yahoo\.com):
+            %input{:placeholder => ".*\\.yahoo\\.com", :type => "text"}
+            %p
+            %p
+              Click here to test the correctness of a regular expression.
+    .control-group
+      %label.control-label 6.  Depth Level
+      .controls
+        %ul#myTab3.nav.nav-tabs
+          %li.active
+            %a{"data-toggle" => "tab", :href => "#home3"} Simple
+          %li
+            %a{"data-toggle" => "tab", :href => "#profile3"} Advanced
+        #myTabContent3.tab-content
+          #home3.tab-pane.fade.active.in
+            80legs will select the depth of your crawl.
+            %br
+            %br
+          #profile3.tab-pane.fade
+            Custom depth level:
+            %input{:type => "text"}
+            %br
+            %br
+    .control-group
+      %label.control-label 7.  Crawl Type
+      .controls
+        %ul#myTab4.nav.nav-tabs
+          %li.active
+            %a{"data-toggle" => "tab", :href => "#home4"} Simple
+          %li
+            %a{"data-toggle" => "tab", :href => "#profile4"} Advanced
+        #myTabContent4.tab-content
+          #home4.tab-pane.fade.active.in
+            80legs will crawl fast (multiple depth levels at once).
+          #profile4.tab-pane.fade
+            %p
+              Modify the Crawl Type here if you require a more comprehensive or breadth-first crawl. Note: Changing this setting from "Fast" may result in a significantly slower crawl.
+            %select
+            %br
+            %br
+    .control-group
+      %label.control-label 8.  Max Number URLs to Crawl
+      %input.controls{:placeholder => "Crawl Google", :type => "text"}
+      .help-block.controls
+        $0.00 account balance is required to run this crawl.
+        To add credit to your account, please click here.
+    .control-group
+      %label.control-label 9.  Max Pages Per Domain
+      .controls
+        %ul#myTab5.nav.nav-tabs
+          %li.active
+            %a{"data-toggle" => "tab", :href => "#home5"} Simple
+          %li
+            %a{"data-toggle" => "tab", :href => "#profile5"} Advanced
+        #myTabContent5.tab-content
+          #home5.tab-pane.fade.active.in
+            There is no limit on the number of pages crawled per domain.
+          #profile5.tab-pane.fade
+            %p
+              The Pricing Plan you are subscribed to does not have this feature enabled. To enable this feature, please select a Pricing Plan with this feature enabled.
+    .control-group
+      %label.control-label 10.  MIME Types to Crawl
+      .controls
+        %ul#myTab3.nav.nav-tabs
+          %li.active
+            %a{"data-toggle" => "tab", :href => "#home3"} Simple
+          %li
+            %a{"data-toggle" => "tab", :href => "#profile3"} Seed List
+        #myTabContent3.tab-content
+          #home3.tab-pane.fade.active.in
+            %textarea{:rows => "3"}
+            %br
+            %br
+          #profile3.tab-pane.fade
+            %p
+              If you have a large seed list or if you want a seed list to be available for future jobs, you can upload it in the My Seed Lists section. Then, you can select it below.
+            %p
+              Select a seed list to use for this job:
+            %select
+            %br
+            %br
+    %h4
+      Step 3: Analysis Settings
+    %p
+      For each crawl, you must run an analysis to get results. This analysis is run on pages as they are crawled.
+    .control-group
+      %label.control-label 11.  Analysis to Run
       .controls
         %ul#myTab2.nav.nav-tabs
           %li.active
@@ -65,7 +179,7 @@
             %br
             %br
     .control-group
-      %label.control-label 6.  Depth Level
+      %label.control-label 12.  Pages to Analyze
       .controls
         %ul#myTab3.nav.nav-tabs
           %li.active
@@ -85,4 +199,28 @@
             %select
             %br
             %br
+    .control-group
+      %label.control-label 13.  MIME Types to Analyze
+      .controls
+        %ul#myTab3.nav.nav-tabs
+          %li.active
+            %a{"data-toggle" => "tab", :href => "#home3"} Simple
+          %li
+            %a{"data-toggle" => "tab", :href => "#profile3"} Seed List
+        #myTabContent3.tab-content
+          #home3.tab-pane.fade.active.in
+            %textarea{:rows => "3"}
+            %br
+            %br
+          #profile3.tab-pane.fade
+            %p
+              If you have a large seed list or if you want a seed list to be available for future jobs, you can upload it in the My Seed Lists section. Then, you can select it below.
+            %p
+              Select a seed list to use for this job:
+            %select
+            %br
+            %br
+    .control-group
+      %label.control-label 14.  Maximum Result File Size
+      %input.controls{:placeholder => "Crawl Google", :type => "text"}
     %button.btn{:type => "submit"} Submit
