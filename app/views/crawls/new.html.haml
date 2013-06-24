@@ -162,43 +162,70 @@
       .controls
         %ul#myTab2.nav.nav-tabs
           %li.active
-            %a{"data-toggle" => "tab", :href => "#home2"} Simple
+            %a{"data-toggle" => "tab", :href => "#n1180apps"} 80apps
           %li
-            %a{"data-toggle" => "tab", :href => "#profile2"} Seed List
+            %a{"data-toggle" => "tab", :href => "#n11CustomCode"} Custom Code
+          %li
+            %a{"data-toggle" => "tab", :href => "#n11RegularExpressions"} Regular Expressions
         #myTabContent2.tab-content
-          #home2.tab-pane.fade.active.in
+          #n1180apps.tab-pane.fade.active.in
+            %p
+              80apps are pre-built apps that you can use to analyze pages while crawling. Many 80apps are included free with a Pricing Plan. More pre-built 80apps are available for purchase in the Marketplace.
+            %p
+              %strong
+                80app
+              %br
+              %select
+            %p
+              %strong
+                Description
+              %br
+              Collects URL, HTTP code, title, meta data, outgoing links, charset, page size, h-tags, body text and md5 of page content.
+            %p
+              %strong
+                Price Per Use
+              %br
+              Free
+            %p
+              %strong
+                Usage Instructions
+              %br
+              Select and run!
+          #n11CustomCode.tab-pane.fade
+            %p With 80legs, you can run your own Java code to analyze content.Description
+            %p To specify a code to use, first upload your code here. Then, you can use it below. You can also optionally specify a data file to use with the code here.
+            %p
+              Select code to use for this crawl:
+              %br
+              %select
+            %p
+              (Optional) Select data to use for this crawl:
+              %br
+              %select
+          #n11RegularExpressions.tab-pane.fade
+            %p This will return the total number of matches per analyzed page for each regular expression. See http://wiki.80legs.com/Results#AnalyzedURLsFile.
+            %p Enter a list of regular expressions (one per line) to match page content against, e.g., "msn+":
             %textarea{:rows => "3"}
             %br
             %br
-          #profile2.tab-pane.fade
-            %p
-              If you have a large seed list or if you want a seed list to be available for future jobs, you can upload it in the My Seed Lists section. Then, you can select it below.
-            %p
-              Select a seed list to use for this job:
-            %select
-            %br
-            %br
+            %p Click here to test the correctness of a regular expression.
     .control-group
       %label.control-label 12.  Pages to Analyze
       .controls
-        %ul#myTab3.nav.nav-tabs
+        %ul#myTab12.nav.nav-tabs
           %li.active
-            %a{"data-toggle" => "tab", :href => "#home3"} Simple
+            %a{"data-toggle" => "tab", :href => "#n12Smple"} Simple
           %li
-            %a{"data-toggle" => "tab", :href => "#profile3"} Seed List
+            %a{"data-toggle" => "tab", :href => "#n12RegularExpression"} Regular Expression
         #myTabContent3.tab-content
-          #home3.tab-pane.fade.active.in
-            %textarea{:rows => "3"}
+          #n12Smple.tab-pane.fade.active.in
+            %p Analyze all pages crawled.
+          #n12RegularExpression.tab-pane.fade
+            %p Analyze all pages that match the following regular expression (e.g., \.jpg): Help
+            %input{:type => "text"}
             %br
             %br
-          #profile3.tab-pane.fade
-            %p
-              If you have a large seed list or if you want a seed list to be available for future jobs, you can upload it in the My Seed Lists section. Then, you can select it below.
-            %p
-              Select a seed list to use for this job:
-            %select
-            %br
-            %br
+            %p Click here to test the correctness of a regular expression.
     .control-group
       %label.control-label 13.  MIME Types to Analyze
       .controls
@@ -209,7 +236,7 @@
             %a{"data-toggle" => "tab", :href => "#profile3"} Seed List
         #myTabContent3.tab-content
           #home3.tab-pane.fade.active.in
-            %textarea{:rows => "3"}
+            %input{:type => "text"}
             %br
             %br
           #profile3.tab-pane.fade
