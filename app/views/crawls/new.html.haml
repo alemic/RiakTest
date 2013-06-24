@@ -1,11 +1,70 @@
-%h3 New Crawl
-%form
+%h3 Create New Crawl
+%p
+  Tooltips are available beside each setting. For detailed information on a setting, visit our
+  %a{href: "http://wiki.80legs.com/Jobs"}Help
+  wiki.
+%form.form-horizontal
   %fieldset
-    %legend Legend
-    %label Label name
-    %input{:placeholder => "Type something…", :type => "text"}/
-    %span.help-block Example block-level help text here.
-    %label.checkbox
-      %input{:type => "checkbox"}/
-      Check me out
+    %h4
+      Step 1: Job Settings
+    %p
+      Crawl jobs can be run once, or repeat on a specified schedule.
+    .control-group
+      %label.control-label 1. Job Name
+      %input.controls{:placeholder => "Crawl Google", :type => "text"}
+    .control-group
+      %label.control-label 2.  Run Environment
+      %select.controls
+    .control-group
+      %label.control-label 3.  Repeat Frequency
+      %select.controls
+    %h4
+      Step 2: Crawl Settings
+    %p
+      All crawls start with a seed list of URLs and proceed by following the outgoing links on those URLs, up to a specified depth level.
+    .control-group
+      %label.control-label 4. Seed List of URLs
+      .controls
+        %ul#myTab.nav.nav-tabs
+          %li.active
+            %a{"data-toggle" => "tab", :href => "#home"} Simple
+          %li
+            %a{"data-toggle" => "tab", :href => "#profile"} Seed List
+        #myTabContent.tab-content
+          #home.tab-pane.fade.active.in
+            %textarea{:rows => "3"}
+            %br
+            %br
+          #profile.tab-pane.fade
+            %p
+              If you have a large seed list or if you want a seed list to be available for future jobs, you can upload it in the My Seed Lists section. Then, you can select it below.
+            %p
+              Select a seed list to use for this job:
+            %select
+            %br
+            %br
+
+      %label.control-label 5.  Outgoing Links to Crawl
+      .controls
+        %ul#myTab2.nav.nav-tabs
+          %li.active
+            %a{"data-toggle" => "tab", :href => "#home2"} Simple
+          %li
+            %a{"data-toggle" => "tab", :href => "#profile2"} Seed List
+        #myTabContent2.tab-content
+          #home2.tab-pane.fade.active.in
+            %textarea{:rows => "3"}
+            %br
+            %br
+          #profile2.tab-pane.fade
+            %p
+              If you have a large seed list or if you want a seed list to be available for future jobs, you can upload it in the My Seed Lists section. Then, you can select it below.
+            %p
+              Select a seed list to use for this job:
+            %select
+            %br
+            %br
+    .control-group
+      %label.control-label 3.  Repeat Frequency
+      %select.controls
     %button.btn{:type => "submit"} Submit
